@@ -1,0 +1,13 @@
+# job to deploy the public facing website
+# Full project: https://gitlab.com/pages/plain-html
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r documentation/public-website .public
+    - mv .public
+  artifacts:
+    paths:
+      - .public
+  only:
+    - master
