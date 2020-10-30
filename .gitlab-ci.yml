@@ -5,7 +5,6 @@ pages:
   script:
     - mkdir .public
     - cp -r documentation/public-website .public
-    - mv .public
   artifacts:
     paths:
       - .public
