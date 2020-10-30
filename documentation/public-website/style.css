@@ -1,0 +1,37 @@
+/*
+* Make navigation work using a sibling selector (~), a label and a checkbx
+*/
+
+#nav-toggle-state {
+    display: none;
+}
+
+#nav-toggle-state:checked~.navbar-menu {
+    display: block;
+}
+
+
+/*
+* blinking cursor effect
+*/
+
+.cursor {
+    display: inline-block;
+    background: #fff;
+    -webkit-animation: blink 0.8s infinite;
+    animation: blink 0.8s infinite;
+    width: 1px;
+    height: 15px;
+}
+
+@keyframes blink {
+    0% {
+        background: #222
+    }
+    50% {
+        background: #fff
+    }
+    100% {
+        background: #222
+    }
+}

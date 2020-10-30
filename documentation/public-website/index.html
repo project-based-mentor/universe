@@ -6,19 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project based mentor program</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section class="section">
-        <div class="container">
-            <h1 class="title">
-                Welcome to the <strong>project based mentorship program</strong>🎉
-            </h1>
-            <p class="subtitle">
-                A place for personal growth through practice with real life programs
-            </p>
+    <section class="hero is-info is-large">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <input type="checkbox" id="nav-toggle-state" />
+                    <div class="navbar-brand">
+                        <a class="navbar-item">
+                            Become a better developer
+                        </a>
+                        <label for="nav-toggle-state" class="navbar-burger burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </div>
+
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <span class="navbar-item">
+                                <a class="button is-info is-inverted"
+                                    href="https://gitlab.com/project-based-mentor/universe">
+                                    <span class="icon">
+                                        <i class="fab fa-gitlab"></i>
+                                    </span>
+                                    <span>Contribute</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
+
+        <div class="hero-body" data-page="home">
+            <div class="container has-text-centered">
+                <p class="title">
+                    Welcome to the project based mentorship program🎉
+                </p>
+                <p class="subtitle"
+                    data-typewriter="A place for personal growth through practice with real life projects">
+                    <noscript>A place for personal growth through practice with real life projects</noscript>
+                </p>
+                <p>
+                    <a class="button is-info" href="https://gitlab.com/project-based-mentor/universe">
+                        <span class="icon">
+                            <i class="fab fa-gitlab"></i>
+                        </span>
+                        <span>Begin coding</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+
     </section>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script defer src="script.js"></script>
 </body>
 
 </html>
