@@ -4,9 +4,9 @@ pages:
   stage: deploy
   script:
     - mkdir .public
-    - cp -r documentation/public-website .public
+    - cp -r documentation/public-website public
   artifacts:
     paths:
-      - .public
+      - public
   only:
     - master
