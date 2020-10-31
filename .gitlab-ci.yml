@@ -25,8 +25,8 @@ build_pm_frontend:
             - "apps/project-idea-manager/frontend/build/"
     script:
         - cd apps/project-idea-manager/frontend
-        - npm install --production --no-progress
-        - npm run build
+        - yarn install --frozen-lockfile --no-progress
+        - yarn build
     only:
         changes:
             - "apps/project-idea-manager/frontend/**/*"
@@ -41,7 +41,7 @@ deploy_pm_frontend:
         - gem install dpl
         - dpl --provider=heroku --app=pbm-pm-frontend --api-key=$HEROKU_API_KEY
     only:
-        refs:
-            - master
+        # refs:
+        #     - master
         changes:
             - "apps/project-idea-manager/frontend/**/*"
