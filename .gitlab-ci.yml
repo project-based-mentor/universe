@@ -1,12 +1,51 @@
+stages:
+    - build
+    - deploy
+
 # job to deploy the public facing website
 # Full project: https://gitlab.com/pages/plain-html
 pages:
-  stage: deploy
-  script:
-    - mkdir .public
-    - cp -r documentation/public-website public
-  artifacts:
-    paths:
-      - public
-  only:
-    - master
+    stage: deploy
+    script:
+        - mkdir .public
+        - cp -r documentation/public-website public
+    artifacts:
+        paths:
+            - public
+    only:
+        - master
+
+build_pm_frontend:
+    stage: build
+    image: node:latest
+    artifacts:
+        untracked: false
+        expire_in: 30 days
+        paths:
+            - "apps/project-idea-manager/frontend/build/"
+    script:
+        - cd apps/project-idea-manager/frontend
+        - yarn install --frozen-lockfile --no-progress
+        - yarn build
+    only:
+        changes:
+            - "apps/project-idea-manager/frontend/**/*"
+
+deploy_pm_frontend:
+    stage: deploy
+    environment:
+        name: production
+    dependencies:
+        - build_pm_frontend
+    script:
+        - gem install dpl
+        - cd apps/project-idea-manager/frontend/build
+        # https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-static
+        - cp ../deployment.json ./static.json
+        # deploy using dpl
+        - dpl --provider=heroku --skip-cleanup --app=pbm-pm-frontend --api-key=$HEROKU_API_KEY
+    only:
+        refs:
+            - master
+        changes:
+            - "apps/project-idea-manager/frontend/**/*"

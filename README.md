@@ -8,7 +8,10 @@ Mono repository containing all projects build within the project based mentor pr
 - [Project structure](#project-structure)
 - [Kanban board](#kanban-board)
 - [Communication](#communication)
-  - [Visual studio code](#visual-studio-code)
+- [Apps](#apps)
+  - [Starting apps](#starting-apps)
+  - [Project Idea Manager](#project-idea-manager)
+- [Visual studio code](#visual-studio-code)
 - [Contribute](#contribute)
 - [Attributions](#attributions)
 
@@ -34,11 +37,83 @@ In order to keep track of progress, report bugs and think about new features we 
 # Communication
 We use the slack app as a messaging application. [Request an invitation](https://join.slack.com/t/projectbasedmentor/shared_invite/zt-iva84vht-_ynhpWaQKfvf6SkaRuw20w)
 
-## Visual studio code
+# Apps
+
+## Starting apps
+Make sure to follow the readme and installation instructions in the README.md of the app. Then there should be a vscode configuration to run both the backend and the frontend.
+
+![run projects](documentation/assets/start-projects.png)
+
+## Project Idea Manager
+Manage and select project ideas to do within this repository.
+
+https://pbm-pm-frontend.herokuapp.com/
+
+**skills**
+
+<table>
+    <tbody>
+        <tr>
+            <th rowspan="5">Frontend</th>
+            <td>
+                <a href="https://reactjs.org/docs/getting-started.html)">React</a>
+            </td>
+            <td>Used as frontend library</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started">HTML5</a>
+            </td>
+            <td>
+                Used for mark up
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started">CSS3</a>
+            <td>
+                Used for styles
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://storybook.js.org/">Storybook</a>
+            </td>
+            <td>Used for component driven development</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html">Typescript</a>
+            </td>
+            <td>Static typed programming language</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Backend</th>
+            <td>
+                <a href="https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/">C#</a>
+            </td>
+            <td>Backend programming language</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://docs.microsoft.com/en-us/dotnet/core/get-started">Dotnet core</a>
+            </td>
+            <td>Backend framework</td>
+        </tr>
+    </tbody>
+</table>
+
+Read more in the project's [readme](apps/project-idea-manager)
+
+# Visual studio code
 
 Install the folowing extensions:
 
-- [editorconfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+- https://marketplace.visualstudio.com/items?itemName=jchannon.csharpextensions
+- https://marketplace.visualstudio.com/items?itemName=kishoreithadi.dotnet-core-essentials
+- https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator
+- https://marketplace.visualstudio.com/items?itemName=Fudge.auto-using
 
 **Additional tools**
 
