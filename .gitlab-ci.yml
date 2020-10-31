@@ -15,6 +15,39 @@ pages:
     only:
         - master
 
+build_pm_backend:
+    stage: build
+    image: mcr.microsoft.com/dotnet/core/sdk:3.1
+    script:
+        - cd apps/project-idea-manager/backend/Api.Web
+        - dotnet build
+    only:
+        changes:
+            - "apps/project-idea-manager/backend/**/*"
+
+deploy_pm_backend:
+    stage: deploy
+    environment:
+        name: production
+    variables:
+        ASPNETCORE_ENVIRONMENT: Production
+        PROJECT_FILE: Api.Web/Api.Web.csproj
+        PROJECT_NAME: Api.Web
+    dependencies:
+        - build_pm_backend
+    script:
+        - gem install dpl
+        - cd apps/project-idea-manager/backend
+        # deploy using dpl
+        # buildpack:
+        # https://elements.heroku.com/buildpacks/jincod/dotnetcore-buildpack
+        - dpl --provider=heroku --skip-cleanup --app=pbm-pm-backend --api-key=$HEROKU_API_KEY
+    only:
+        refs:
+            - master
+        changes:
+            - "apps/project-idea-manager/backend/**/*"
+
 build_pm_frontend:
     stage: build
     image: node:latest
