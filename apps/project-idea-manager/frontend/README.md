@@ -5,7 +5,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Install [nodejs](https://nodejs.org/en/download/)
 
 ```sh
+# Install the yarn package manager (https://yarnpkg.com/)
 npm i -g yarn
+# Install dependencies
+yarn
 ```
 
 ## Available Scripts
