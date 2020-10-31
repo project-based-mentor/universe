@@ -1,9 +1,25 @@
 {
-   // Use IntelliSense to find out which attributes exist for C# debugging
-   // Use hover for the description of the existing attributes
-   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-   "version": "0.2.0",
-   "configurations": [
+    // Use IntelliSense to find out which attributes exist for C# debugging
+    // Use hover for the description of the existing attributes
+    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Projects: Project Manager",
+            "configurations": [
+                "Project Manager Backend",
+                "Project Manager Frontend"
+            ]
+        }
+    ],
+    "configurations": [
+        {
+            "command": "npm start",
+            "name": "Project Manager Frontend",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/apps/project-idea-manager/frontend"
+        },
         {
             "name": "Project Manager Backend",
             "type": "coreclr",

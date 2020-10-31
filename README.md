@@ -9,6 +9,7 @@ Mono repository containing all projects build within the project based mentor pr
 - [Kanban board](#kanban-board)
 - [Communication](#communication)
 - [Apps](#apps)
+  - [Starting apps](#starting-apps)
   - [Project Idea Manager](#project-idea-manager)
 - [Visual studio code](#visual-studio-code)
 - [Contribute](#contribute)
@@ -37,6 +38,11 @@ In order to keep track of progress, report bugs and think about new features we 
 We use the slack app as a messaging application. [Request an invitation](https://join.slack.com/t/projectbasedmentor/shared_invite/zt-iva84vht-_ynhpWaQKfvf6SkaRuw20w)
 
 # Apps
+
+## Starting apps
+Make sure to follow the readme and installation instructions in the README.md of the app. Then there should be a vscode configuration to run both the backend and the frontend.
+
+![run projects](documentation/assets/start-projects.png)
 
 ## Project Idea Manager
 Manage and select project ideas to do within this repository.
