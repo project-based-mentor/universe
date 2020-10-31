@@ -17,7 +17,7 @@ pages:
 
 build_pm_backend:
     stage: build
-    image: mcr.microsoft.com/dotnet/core/aspnet:3.1
+    image: mcr.microsoft.com/dotnet/core/sdk:3.1
     script:
         - cd apps/project-idea-manager/backend/Api.Web
         - dotnet build
