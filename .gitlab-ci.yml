@@ -39,9 +39,15 @@ deploy_pm_frontend:
         - build_pm_frontend
     script:
         - gem install dpl
+        - cd build
+        # heroku can not serve static pages so instead make a php script instead
+        - echo '{}' > composer.json
+        - echo '<?php include_once("home.html"); ?>' > index.php
+        - mv index.html home.html
+        # deploy using dpl
         - dpl --provider=heroku --app=pbm-pm-frontend --api-key=$HEROKU_API_KEY
     only:
-        # refs:
-        #     - master
+        refs:
+            - master
         changes:
             - "apps/project-idea-manager/frontend/**/*"
