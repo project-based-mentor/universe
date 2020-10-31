@@ -47,6 +47,8 @@ Make sure to follow the readme and installation instructions in the README.md of
 ## Project Idea Manager
 Manage and select project ideas to do within this repository.
 
+https://pbm-pm-frontend.herokuapp.com/
+
 **skills**
 
 <table>
