@@ -1,39 +1,3 @@
-Skip to content
-Why GitHub?
-Team
-Enterprise
-Explore
-Marketplace
-Pricing
-Search
-
-Sign in
-Sign up
-dotnet
-/
-core
-1.4k14.7k3.6k
-Code
-Issues
-328
-Pull requests
-8
-Actions
-Projects
-Security
-Insights
-Join GitHub today
-GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
-
-core/.gitignore
-@pavinthan
-pavinthan Add jetbrains folder to .gitignore (#2320)
-Latest commit 718ec99 on Feb 27, 2019
- History
- 5 contributors
-@richlander@geek@Petermarcu@pavinthan@terrajobst
-37 lines (32 sloc)  341 Bytes
-
 *.swp
 *.*~
 project.lock.json
