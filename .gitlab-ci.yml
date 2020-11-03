@@ -21,6 +21,7 @@ build_pm_backend:
     script:
         - cd apps/project-idea-manager/backend/Api.Web
         - dotnet build
+        - dotnet test
     only:
         changes:
             - "apps/project-idea-manager/backend/**/*"
