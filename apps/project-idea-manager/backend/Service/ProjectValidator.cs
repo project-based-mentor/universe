@@ -3,22 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Api.Models;
 
 namespace Api.WebTest.Validators
 {
-    public class ProjectValidator : AbstractValidator<ProjectValidatorModel>
+    public class ProjectValidator : AbstractValidator<ApiProject>
     {
          public ProjectValidator()
          {
             RuleFor(p => p.Name)
-                .Cascade(CascadeMode.Stop)
                 .NotEmpty()
-                .Length(1, 50);
+                .MaximumLength(50);
 
             RuleFor(p => p.Description)
-                .Cascade(CascadeMode.Stop)
                 .NotEmpty()
-                .Length(0, 255);
+                .MaximumLength(255);
          }
     }
 }
