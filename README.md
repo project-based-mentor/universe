@@ -127,3 +127,5 @@ Please read the [contribution guidelines](CONTRIBUTING.md) before submitting cod
 # Attributions
 
 The project icon has been made by [freepik](https://www.flaticon.com/authors/freepik) from [flaticon](https://www.flaticon.com/)
+
+The organization icon has been made by Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
