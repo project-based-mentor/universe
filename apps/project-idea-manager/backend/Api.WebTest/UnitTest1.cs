@@ -3,11 +3,12 @@ using FluentValidation;
 using FluentValidation.TestHelper;
 using FluentValidation.Results;
 using System;
+using Api.WebTest.Validators;
 
-namespace Api.WebTest.Validators
+namespace Api.WebTest
 {
     [TestFixture]
-    public class ProjectValidatorTest
+    public class UnitTest1
     {
         private ProjectValidator validator;
 
@@ -24,8 +25,8 @@ namespace Api.WebTest.Validators
             var model = new ProjectValidatorModel { Name = null };
             var result = validator.TestValidate(model);
             result.ShouldHaveValidationErrorFor(p => p.Name);
-
- //           Assert.Pass();
+            
+            //Assert.Pass();
         }
     }
 }
