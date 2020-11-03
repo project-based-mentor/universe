@@ -21,6 +21,7 @@ namespace Api.Web
         {
             services.AddControllers();
             services.AddSingleton<IProjectService, ProjectService>();
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,6 +31,14 @@ namespace Api.Web
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger()
+                .UseSwaggerUI(
+                    c =>
+                    {
+                        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProjectManager v1");
+                        c.RoutePrefix = string.Empty;
+                    });
 
             app.UseHttpsRedirection();
 
