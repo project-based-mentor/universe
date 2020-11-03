@@ -2,6 +2,9 @@ using System;
 
 namespace Api.Models
 {
+    /// <summary>
+    /// ApiComment definition which is safe to send to the client
+    /// </summary>
     public class ApiComment
     {
         public Guid? Id { get; set; }

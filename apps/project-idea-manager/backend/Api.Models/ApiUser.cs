@@ -2,6 +2,9 @@ using System;
 
 namespace Api.Models
 {
+    /// <summary>
+    /// ApiUser defitinion which is safe to send to the user
+    /// </summary>
     public class ApiUser
     {
         public Guid? Id { get; set; }

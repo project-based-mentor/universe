@@ -9,21 +9,29 @@ using Service;
 
 namespace Api.Web.Controllers
 {
+    /// <summary>
+    /// Responsible for client requests towards /projects
+    /// </summary>
     [ApiController]
     [Route("/projects")]
     public class ProjectController : ControllerBase
     {
-        private readonly IProjectService ProjectService;
+        private readonly IProjectService _projectService;
 
         public ProjectController(IProjectService projectService)
         {
-            ProjectService = projectService;
+            _projectService = projectService;
         }
 
+        /// <summary>
+        /// GET /projects
+        /// gets all ApiProjects
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IEnumerable<ApiProject>> Get()
         {
-            return await ProjectService.GetProjectAsync().ConfigureAwait(false);
+            return await _projectService.GetProjectAsync().ConfigureAwait(false);
         }
     }
 }

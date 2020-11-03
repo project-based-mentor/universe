@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Api.Models
 {
+    /// <summary>
+    /// ApiProject definition which is safe to send to the user
+    /// </summary>
     public class ApiProject
     {
         public Guid? Id { get; set; }
