@@ -2,11 +2,11 @@
 
 Mono repository containing all projects build within the project based mentor program
 
-
 - [universe](#universe)
 - [Getting started](#getting-started)
-- [Project structure](#project-structure)
-- [Kanban board](#kanban-board)
+  - [Kanban board](#kanban-board)
+  - [Create a Merge request](#create-a-merge-request)
+  - [Project structure](#project-structure)
 - [Communication](#communication)
 - [Apps](#apps)
   - [Starting apps](#starting-apps)
@@ -19,7 +19,27 @@ Mono repository containing all projects build within the project based mentor pr
 
 Install the [visual studio code editing software](https://code.visualstudio.com/) and [git](https://git-scm.com/downloads).
 
-# Project structure
+## Kanban board
+In order to keep track of progress, report bugs and think about new features we use a project management method called [kanban](https://www.atlassian.com/agile/kanban). Take a look at our [kanban board](https://gitlab.com/project-based-mentor/universe/-/boards) and maybe you'll find something interesting.
+
+## Create a Merge request
+> A Merge Request (MR) is a request to merge one branch into another.
+> Use merge requests to visualize and collaborate on proposed changes to source code.
+> https://docs.gitlab.com/ee/user/project/merge_requests/
+
+All code in this repository should be reviewed & approved before it's deployed to the `master` branch by one of the maintainers of this project. Follow these steps to create a merge request and a branch associated with it.
+
+
+1. navigate to the issue and click on `Create merge request`
+![create a merge request](documentation/assets/checkout-1.png)
+
+2. A branch is automatically created. To checkout this branch click on the `Check out branch button` on the merge request
+![Check out branch](documentation/assets/checkout-2.png)
+
+3. This will open a new window with commands that you should execute in the terminal inside the cloned repository
+![Check out branch](documentation/assets/checkout-3.png)
+
+## Project structure
 
 ```
 .
@@ -31,11 +51,8 @@ Install the [visual studio code editing software](https://code.visualstudio.com/
     └── public-website
 ```
 
-# Kanban board
-In order to keep track of progress, report bugs and think about new features we use a project management method called [kanban](https://www.atlassian.com/agile/kanban). Take a look at our [kanban board](https://gitlab.com/project-based-mentor/universe/-/boards) and maybe you'll find something interesting.
-
 # Communication
-We use the slack app as a messaging application. [Request an invitation](https://join.slack.com/t/projectbasedmentor/shared_invite/zt-iva84vht-_ynhpWaQKfvf6SkaRuw20w)
+We use the slack app as our messaging application.
 
 # Apps
 
