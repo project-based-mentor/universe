@@ -1,5 +1,13 @@
+import TodoListPage from './pages/TodoListPage';
+import useTodos from './hooks/useTodos'
+
+
 export const App = () => {
-    return <h1>Hi</h1>
+    const todosQuery = useTodos();
+
+    return (
+        <TodoListPage loading={todosQuery.isLoading} todos={todosQuery.data || []}/>
+    )
 }
 
 export default App;
