@@ -5,18 +5,9 @@ import './TodoListPage.css';
 interface Props {
     todos: Todo[],
     loading?: boolean
-    filters?: Filters
 }
 
-interface Filters {
-    showComplete?: boolean
-}
-
-const defaultFilters: Filters = {
-    showComplete: true
-}
-
-export const TodoListPage = ({ todos, loading, filters = defaultFilters }: Props) => {
+export const TodoListPage = ({ todos, loading }: Props) => {
     return (
         <Hero>
             <>
@@ -24,22 +15,29 @@ export const TodoListPage = ({ todos, loading, filters = defaultFilters }: Props
                     <section className="top-fade" />
                     {loading && <Loading />}
                     {!loading && todos.length === 0 && <Empty />}
-                    {!loading && <List todos={todos} filters={filters} />}
+                    {!loading && <List todos={todos} />}
                     <section className="bottom-fade" />
                 </main>
+                <div className="is-fab">
+                    <button className="button is-rounded" onClick={e => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }}>
+                        <span className="is-size-4">^</span>
+                    </button>
+                </div>
             </>
         </Hero>
     );
 }
 const Empty = () => <div>No todos yet...</div>;
 const loadingPlaceholders: Todo[] = Array(5).fill({ title: "Loading...", completed: false })
-const Loading = () => <List filters={defaultFilters} todos={loadingPlaceholders} />
+const Loading = () => <List todos={loadingPlaceholders} />
 
-const List = ({ todos, filters }: Pick<Props, "todos"> & { filters: Filters }) => {
+const showPerPage = 10;
+const List = ({ todos }: Pick<Props, "todos">) => {
     const loader = useRef<HTMLDivElement>(null);
     const [page, setPage] = useState(0);
-    const [shownTodos, setShownTodos] = useState(todos.slice(0, 10));
-
+    const [shownTodos, setShownTodos] = useState<Todo[]>(todos.slice(0, showPerPage));
     useEffect(() => {
         const options = {
             root: null,
@@ -51,19 +49,17 @@ const List = ({ todos, filters }: Pick<Props, "todos"> & { filters: Filters }) =
             observer.observe(loader.current)
         }
     }, []);
+    useEffect(showTodos, [page, shownTodos, todos]);
+    function showTodos() {
+        const start = page * showPerPage;
+        const end = start + showPerPage
+        if (end > todos.length || end === shownTodos.length) {
+            return;
+        }
 
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-
-        });
-    })
-
-    useEffect(() => {
-        const start = page * 10;
-        const newTodos = shownTodos.concat(todos.slice(page * 10, start + 10));
-        setShownTodos(newTodos);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [page]);
+        const newTodos = todos.slice(start, end);
+        setShownTodos(shownTodos.concat(newTodos));
+    }
 
     const handleObserver = (entities: any[]) => {
         const target = entities[0];
@@ -73,7 +69,10 @@ const List = ({ todos, filters }: Pick<Props, "todos"> & { filters: Filters }) =
     }
     return (<>
         {
-            shownTodos.map((todo, key) => <TodoTile key={key} todo={todo} />)
+            shownTodos.map((todo, key) => <TodoTile key={todo.id || key} todo={todo} onDelete={() => {
+                shownTodos[key].completed = true;
+                setShownTodos([...shownTodos]);
+            }} />)
         }
         <div ref={loader} />
     </>
@@ -94,9 +93,13 @@ const Hero = ({ children }: { children: React.ReactElement }) => (
     </section>
 );
 
-const TodoTile = ({ todo }: { todo: Todo }) => (
-    <div className="notification is-link is-light">
-        <button className="delete"></button>
+const TodoTile = ({ todo, onDelete }: { todo: Todo, onDelete: () => void }) => (
+    <div className={`notification is-link is-light todo ${todo.completed ? 'completed-todo' : ''}`}>
+        {
+            !todo.completed && (
+                <button className="delete" onClick={onDelete}></button>
+            )
+        }
         <p>{todo.title}</p>
     </div>
 )

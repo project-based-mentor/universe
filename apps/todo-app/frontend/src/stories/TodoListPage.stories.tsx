@@ -40,6 +40,11 @@ List.args = {
     todos
 }
 
+export const LongList = Template.bind({});
+LongList.args = {
+    todos: [...Array(100).keys()].map(id => ({...todos[0], id}))
+}
+
 export default {
     title: 'Apps/Todo/EmptyList',
     component: TodoList,

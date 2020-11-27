@@ -17,6 +17,9 @@ export const useTodos = (props?: Props) =>
         return getTodos();
     })
 
-const getTodos = async (): Promise<Todo[]> => await fetch('https://jsonplaceholder.typicode.com/todos').then(r => r.json())
+const getTodos = async (): Promise<Todo[]> =>
+    await fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(r => r.json())
+        .then((todos: Todo[]) => todos.map((todo, key) => ({ ...todo, id: key.toString() })))
 
 export default useTodos;
