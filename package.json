@@ -1,0 +1,9 @@
+{
+    "private": true,
+    "workspaces": {
+        "nohoist": ["**/babel-loader"],
+        "packages": [
+            "./apps/**/frontend"
+        ]
+    }
+}

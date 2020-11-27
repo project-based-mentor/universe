@@ -1,2 +1,3 @@
 # build artifact for gitlab pages
 ./public
+node_modules
