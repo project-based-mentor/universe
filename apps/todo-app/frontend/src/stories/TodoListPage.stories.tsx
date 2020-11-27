@@ -46,6 +46,6 @@ LongList.args = {
 }
 
 export default {
-    title: 'Apps/Todo/EmptyList',
+    title: 'Apps/Todo/List',
     component: TodoList,
 } as Meta;
