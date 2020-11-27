@@ -18,16 +18,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "baseUrl": "./",
-    "paths": {
-        "apps": [
-            "./apps"
-        ]
-    }
+    "jsx": "react-jsx"
   },
   "include": [
-    "apps/project-idea-manager/frontend/src/*",
-    "apps/todo-app/frontend/src/*"
+    "src/*"
   ]
 }

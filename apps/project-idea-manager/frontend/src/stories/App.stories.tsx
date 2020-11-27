@@ -10,6 +10,6 @@ const Template: Story<any> = (args) => <App {...args} />;
 export const CompleteApplication = Template.bind({});
 
 export default {
-    title: 'App',
+    title: 'Apps/ProjectManager/App',
     component: App,
   } as Meta;
