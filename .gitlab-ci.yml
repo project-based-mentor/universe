@@ -7,8 +7,10 @@ stages:
 pages:
     stage: deploy
     script:
+        - yarn
         - mkdir .public
         - cp -r documentation/public-website public
+        - yarn build-storybook -o public/storybook
     artifacts:
         paths:
             - public

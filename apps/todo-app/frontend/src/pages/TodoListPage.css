@@ -1,0 +1,42 @@
+main.section {
+    padding-top: 0px
+}
+
+.hero.section {
+    padding-bottom: 24px;
+}
+
+​ .top-fade, .bottom-fade {
+    height: 40px;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    z-index: 10;
+}
+
+.top-fade {
+    height: 16px;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    z-index: 10;
+    top: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, #3273dc 0%, rgba(255, 255, 255, 0) 25%);
+}
+
+.bottom-fade {
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #3273dc 100%);
+}
+
+.completed-todo {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.is-fab {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+}
