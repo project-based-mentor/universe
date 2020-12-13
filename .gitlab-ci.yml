@@ -68,6 +68,22 @@ build_pm_frontend:
         changes:
             - "apps/project-idea-manager/frontend/**/*"
 
+build_pm2_frontend:
+    stage: build
+    image: node:latest
+    artifacts:
+        untracked: false
+        expire_in: 30 days
+        paths:
+            - "apps/project-manager/frontend/build/"
+    script:
+        - cd apps/project-manager/frontend
+        - yarn install --frozen-lockfile --no-progress
+        - yarn build
+    only:
+        changes:
+            - "apps/project-manager/frontend/**/*"
+
 deploy_pm_frontend:
     stage: deploy
     environment:
@@ -86,3 +102,22 @@ deploy_pm_frontend:
             - master
         changes:
             - "apps/project-idea-manager/frontend/**/*"
+
+deploy_pm2_frontend:
+    stage: deploy
+    environment:
+        name: production
+    dependencies:
+        - build_pm2_frontend
+    script:
+        - gem install dpl
+        - cd apps/project-manager/frontend/build
+        # https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-static
+        - cp ../deployment.json ./static.json
+        # deploy using dpl
+        - dpl --provider=heroku --skip-cleanup --app=pbm-pm2-frontend --api-key=$HEROKU_API_KEY
+    only:
+        refs:
+            - master
+        changes:
+            - "apps/project-manager/frontend/**/*"
