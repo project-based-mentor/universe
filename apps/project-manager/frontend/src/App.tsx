@@ -1,6 +1,8 @@
+import * as Page from './pages';
+
 export const App = () => {
     return (
-        <div>Hello</div>
+        <Page.ProjectsPage />
     )
 }
 

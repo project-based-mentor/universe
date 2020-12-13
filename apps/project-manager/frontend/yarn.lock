@@ -2156,6 +2156,13 @@
   dependencies:
     tslib "^1.9.3"
 
+"@wry/equality@^0.1.2":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@wry/equality/-/equality-0.1.11.tgz#35cb156e4a96695aa81a9ecc4d03787bc17f1790"
+  integrity sha512-mwEVBDUVODlsQQ5dfuLUS5/Tf7jqUKyhKYHmVi4fPB6bDMOfWvUPJmKgS1Z7Za/sOI3vzWt4+O7yCiL/70MogA==
+  dependencies:
+    tslib "^1.9.3"
+
 "@wry/equality@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@wry/equality/-/equality-0.3.0.tgz#4b022a0907f01f32c07a1a665d9430155a59ea06"
@@ -2331,6 +2338,16 @@ apollo-link-rest@^0.8.0-beta.0:
   version "0.8.0-beta.0"
   resolved "https://registry.yarnpkg.com/apollo-link-rest/-/apollo-link-rest-0.8.0-beta.0.tgz#435055d4bee82182c17974df5a9a606c4edf62a1"
   integrity sha512-+/cHVXz0jF4SOg3bIVPxCArnpp7ojwhLarT9MLzbAuoaI+Uq+pU9Ob8Xmq4BS3Z+mIdVmnrIyw8EvqEzP7RL0w==
+
+apollo-utilities@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.3.4.tgz#6129e438e8be201b6c55b0f13ce49d2c7175c9cf"
+  integrity sha512-pk2hiWrCXMAy2fRPwEyhvka+mqwzeP60Jr1tRYi5xru+3ko94HI9o6lK0CT33/w4RDlxWchmdhDCrvdr+pHCig==
+  dependencies:
+    "@wry/equality" "^0.1.2"
+    fast-json-stable-stringify "^2.0.0"
+    ts-invariant "^0.4.0"
+    tslib "^1.10.0"
 
 aproba@^1.1.1:
   version "1.2.0"
@@ -3550,6 +3567,11 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+
+corporate-ipsum@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/corporate-ipsum/-/corporate-ipsum-1.0.1.tgz#0216b9a8595fcfc0a3940c8c51451a165f9344fe"
+  integrity sha512-Oz9Xvi9pNvlyxdJm6aVJEHpb/8quhDWPf5O2uOsKIuyQNm9zm+j55nmBw/7SaTHGvi5goUagm2IIS3rkPr8WVw==
 
 cosmiconfig@^5.0.0:
   version "5.2.1"
@@ -5368,10 +5390,24 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
+graphql-anywhere@^4.2.7:
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.2.7.tgz#c06fb40b1d62b39470c80e3731478dbbef060067"
+  integrity sha512-fJHvVywWVWjiHuPIMs16Nfjf4zdQUwSO1LKycwBJCWIPeoeQ8LqXK2BgYoZAHkhKEFktZZeYyzS4o/uIUG0z5A==
+  dependencies:
+    apollo-utilities "^1.3.4"
+    ts-invariant "^0.3.2"
+    tslib "^1.10.0"
+
 graphql-tag@^2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.11.0.tgz#1deb53a01c46a7eb401d6cb59dec86fa1cccbffd"
   integrity sha512-VmsD5pJqWJnQZMUeRwrDhfgoyqcfwEkvtpANqcoUG8/tOLkwNgU9mzub/Mc78OJMhHjx7gfAMTxzdG43VGg3bA==
+
+graphql@^15.4.0:
+  version "15.4.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.4.0.tgz#e459dea1150da5a106486ba7276518b5295a4347"
+  integrity sha512-EB3zgGchcabbsU9cFe1j+yxdzKQKAbGUWRb13DsrsMN1yyfmmIq+2+L5MqVWcDCE4V89R5AyUOi7sMOGxdsYtA==
 
 growly@^1.3.0:
   version "1.3.0"
@@ -10629,6 +10665,20 @@ tryer@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
+
+ts-invariant@^0.3.2:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.3.3.tgz#b5742b1885ecf9e29c31a750307480f045ec0b16"
+  integrity sha512-UReOKsrJFGC9tUblgSRWo+BsVNbEd77Cl6WiV/XpMlkifXwNIJbknViCucHvVZkXSC/mcWeRnIGdY7uprcwvdQ==
+  dependencies:
+    tslib "^1.9.3"
+
+ts-invariant@^0.4.0:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.4.4.tgz#97a523518688f93aafad01b0e80eb803eb2abd86"
+  integrity sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA==
+  dependencies:
+    tslib "^1.9.3"
 
 ts-invariant@^0.6.0:
   version "0.6.0"

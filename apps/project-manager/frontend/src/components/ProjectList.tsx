@@ -26,11 +26,19 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
     }
 
     const grouped = groupBy<Project>(p => p.category, projects);
+    const groups = Object.keys(grouped);
 
     return (
-        <div className="container">
-            {Object.keys(grouped).map((g, i) =>
-                <Grouped index={i} key={g} color={getColor(i)} category={g} projects={grouped[g]} />)}
+        <div>
+            {groups.map((g, i) =>
+                <Grouped
+                    index={i}
+                    key={g}
+                    color={getColor(i)}
+                    category={g}
+                    projects={grouped[g]}
+                    last={i === groups.length - 1}
+                />)}
         </div>
     );
 }
@@ -39,7 +47,8 @@ interface GroupedProps {
     projects: Project[],
     category: string,
     index: number,
-    color: Color
+    color: Color,
+    last: boolean
 }
 
 const Grouped = (props: GroupedProps) =>
@@ -56,10 +65,14 @@ const Grouped = (props: GroupedProps) =>
                 {props.projects.map(p => <ProjectCard key={p.id} project={p} color={props.color} />)}
             </div>
         </div>
-        <div className="triangles">
-            <div className="triangle-bottom-left" />
-            <div className="triangle-bottom-right" />
-        </div>
+        {
+            !props.last && (
+                <div className="triangles">
+                    <div className="triangle-bottom-left" />
+                    <div className="triangle-bottom-right" />
+                </div>
+            )
+        }
     </section>
 
 export default ProjectList;
