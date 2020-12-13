@@ -1,0 +1,36 @@
+.project-hero:not(:first-of-type) .title {
+    margin-top: -191px
+}
+
+.triangles {
+    display: flex;
+    justify-content: space-between;
+}
+
+.triangle-bottom-left {
+    width: 0;
+    height: 0;
+    border-bottom: 25px solid;
+    border-right: 25px solid transparent;
+}
+
+.triangle-bottom-right {
+    width: 0;
+    height: 0;
+    border-bottom: 25px solid;
+    border-left: 25px solid transparent;
+}
+
+.triangle-top-left {
+    width: 0;
+    height: 0;
+    border-top: 25px solid;
+    border-right: 25px solid transparent;
+}
+
+.triangle-top-right {
+    width: 0;
+    height: 0;
+    border-top: 25px solid;
+    border-left: 25px solid transparent;
+}

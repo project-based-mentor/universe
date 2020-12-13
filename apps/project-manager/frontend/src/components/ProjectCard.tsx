@@ -1,12 +1,13 @@
 import { Project } from "../models";
 
 interface Props {
-    project: Project
+    project: Project,
+    color: string
 }
 
-export const ProjectCard = ({ project }: Props) => (
+export const ProjectCard = ({ project, color }: Props) => (
     <div className='card mb-6'>
-        <header className="card-header has-background-info">
+        <header className={`card-header has-background-${color}`}>
             <p className="card-header-title has-text-light">{project.title}</p>
         </header>
         <div className="card-content">
